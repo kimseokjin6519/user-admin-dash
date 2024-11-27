@@ -4,7 +4,7 @@ import defaultProfileImage from './assets/images/default_profile.png';
 function App() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <header className="bg-blue-600 text-white p-4 flex justify-between items-center">
+      <header className="bg-blue-700 text-white p-4 flex justify-between items-center">
         
         {/* Left-aligned Flexbox (Menu, Google Admin, and Search) */}
 
