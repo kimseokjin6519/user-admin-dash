@@ -10,16 +10,16 @@ function App() {
 
         <div className="flex items-center space-x-4">
           <button className="text-white text-lg" style={{ fontFamily: 'Google Sans' }}>☰</button>
-          <h1 className="text-xl font-light pr-4 text-gray-100" style={{ fontFamily: 'Google Sans' }}>Google Admin</h1>
+          <h1 className="text-lg font-light pr-4 text-gray-100" style={{ fontFamily: 'Google Sans' }}>Google Admin</h1>
           
           <div className="flex items-center">
             <input
               type="text"
               placeholder="Search for users, groups or settings"
-              className="text-sm p-2 rounded-l-lg text-gray-700 w-96 border-0 border-black"
+              className="text-xs p-2 rounded-l-lg text-gray-700 w-96 border-0 border-black"
               style = {{fontFamily: 'Google Sans'}}
             />
-            <button className="text-sm bg-white text-blue-600 p-2 rounded-r-lg border-0 border-black border-l-0">
+            <button className="text-xs bg-white text-blue-600 p-2 rounded-r-lg border-0 border-black border-l-0">
               🔍
             </button>
           </div>
@@ -32,7 +32,7 @@ function App() {
             <img
                src={defaultProfileImage}
                alt="Profile"
-               className="w-8 h-8 rounded-full"
+               className="w-6 h-6 rounded-full"
                />
           </button> {/* Profile Picture or Icon */}
         </div>
@@ -40,7 +40,7 @@ function App() {
       
       {/* Navigation Information */}
       <div className="bg-white p-2 pl-5 shadow-md">
-        <h2 className="text-sm font-normal text-gray-900 tracking-normal" style = {{fontFamily:'Google Sans'}}>Admin Console</h2>
+        <h2 className="text-sm font-normal text-gray-700 tracking-normal" style = {{fontFamily:'Google Sans'}}>Admin Console</h2>
       </div>
       
       <div className="w-full h-2 shadow-md"></div>
@@ -51,51 +51,51 @@ function App() {
         {/* Dashboard */}
 
         <div className="flex flex-col items-center justify-start bg-white p-0 w-36">
-          <div className="bg-white p-4">
+          <div className="bg-white p-2">
             <span className="text-2xl">📊</span> {/* Dashboard Icon */}
           </div>
           <span className="mt-0 text-center font-semibold text-gray-900">Dashboard</span>
-          <p className="text-xs text-center font-light">See relevant insights about your organization</p>
+          <p className="mt-1 text-xs text-center font-light tracking-wide">See relevant insights about your organization</p>
         </div>
 
         {/* Users */}
 
         <div className="flex flex-col items-center justify-start bg-white p-0 w-36">
-          <div className="bg-white p-4">
+          <div className="bg-white p-2">
             <span className="text-2xl">👥</span> {/* Users Icon */}
           </div>
           <span className="mt-0 text-center font-semibold text-gray-900">Users</span>
-          <p className="text-xs text-center font-light">Add or manage users</p>
+          <p className="mt-1 text-xs text-center font-light tracking-wide">Add or manage users</p>
         </div>
 
         {/* Groups */}
 
         <div className="flex flex-col items-center justify-start bg-white p-0 w-36">
-          <div className="bg-white p-4">
+          <div className="bg-white p-2">
             <span className="text-2xl">👨‍👨‍👧‍👦</span> {/* Groups Icon */}
           </div>
           <span className="mt-0 text-center font-semibold text-gray-900">Groups</span>
-          <p className="text-xs text-center font-light">Create groups and mailing lists</p>
+          <p className="mt-1 text-xs text-center font-light tracking-wide">Create groups and mailing lists</p>
         </div>
 
         {/* Settings */}
 
         <div className="flex flex-col items-center justify-start bg-white p-0 w-36">
-          <div className="bg-white p-4">
+          <div className="bg-white p-2">
             <span className="text-2xl">⚙️</span> {/* Settings Icon */}
           </div>
           <span className="mt-0 text-center font-semibold text-gray-900">Settings</span>
-          <p className="text-xs text-center font-light">Update information about your company</p>
+          <p className="mt-1 text-xs text-center font-light tracking-wide">Update information about your company</p>
         </div>
 
         {/* Reports */}
 
         <div className="flex flex-col items-center justify-start bg-white p-0 w-36">
-          <div className="bg-white p-4">
+          <div className="bg-white p-2">
             <span className="text-2xl">📈</span> {/* Reports Icon */}
           </div>
           <span className="mt-0 text-center font-semibold text-gray-900">Reports</span>
-          <p className="text-xs text-center font-light">Monitor usage across your organization</p>
+          <p className="mt-1 text-xs text-center font-light tracking-wide">Monitor usage across your organization</p>
         </div>
 
       </div>
