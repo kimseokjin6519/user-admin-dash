@@ -2,6 +2,7 @@ import React from 'react';
 
 import defaultProfileImage from './assets/images/default_profile.png';
 import defaultAppsImage from './assets/images/grid.png';
+import defaultTasksImage from './assets/images/hourglass.png';
 
 function App() {
   return (
@@ -27,18 +28,25 @@ function App() {
           </div>
         </div>
         
-        {/* Right-aligned Flexbox (Drop Down, Default Apps, Profile Picture) */}
+        {/* Right-aligned Flexbox (Default Tasks, Help Icon, Default Apps, Profile Picture) */}
 
         <div className="flex items-center">
 
-          {/* Drop Down */} 
+         {/* Default Tasks */}
+         
+         <button className="text-white">
+            <img
+               src={defaultTasksImage}
+               alt="Default Tasks"
+               className="w-4 h-4 mr-6 rounded-full"
+               />
+          </button> 
+
+          {/* Help Icon */} 
           
           <button className="text-white">
-            <img
-               src={defaultAppsImage}
-               alt="Default Apps"
-               className="w-4 h-4 bg-white mr-10 rounded-full"
-               />
+            <div className="flex w-4 h-4 items-center justify-center bg-white mr-10 text-blue-700 rounded-full"
+               style={{ fontFamily: 'Product Sans' }}>?</div>
           </button> 
 
           {/* Default Apps */}
