@@ -1,5 +1,7 @@
 import React from 'react';
+
 import defaultProfileImage from './assets/images/default_profile.png';
+import defaultAppsImage from './assets/images/grid.png';
 
 function App() {
   return (
@@ -25,17 +27,42 @@ function App() {
           </div>
         </div>
         
-        {/* Right-aligned Flexbox (Profile Picture) */}
+        {/* Right-aligned Flexbox (Drop Down, Default Apps, Profile Picture) */}
 
         <div className="flex items-center">
+
+          {/* Drop Down */} 
+          
+          <button className="text-white">
+            <img
+               src={defaultAppsImage}
+               alt="Default Apps"
+               className="w-4 h-4 bg-white mr-10 rounded-full"
+               />
+          </button> 
+
+          {/* Default Apps */}
+         
+          <button className="text-white">
+            <img
+               src={defaultAppsImage}
+               alt="Default Apps"
+               className="w-4 h-4 bg-blue-700 mr-4"
+               />
+          </button> 
+        
+          {/* Default Profile Picture */}
+
           <button className="text-white">
             <img
                src={defaultProfileImage}
                alt="Profile"
                className="w-6 h-6 rounded-full"
                />
-          </button> {/* Profile Picture or Icon */}
-        </div>
+          </button>
+         </div>
+
+
       </header>
       
       {/* Navigation Information */}
@@ -54,7 +81,7 @@ function App() {
           <div className="bg-white p-2">
             <span className="text-2xl">📊</span> {/* Dashboard Icon */}
           </div>
-          <span className="mt-0 text-center font-semibold text-gray-900">Dashboard</span>
+          <span className="mt-0 text-center font-normal text-black" style = {{fontFamily:'Product Sans'}}>Dashboard</span>
           <p className="mt-1 text-xs text-center font-light tracking-wide">See relevant insights about your organization</p>
         </div>
 
@@ -64,7 +91,7 @@ function App() {
           <div className="bg-white p-2">
             <span className="text-2xl">👥</span> {/* Users Icon */}
           </div>
-          <span className="mt-0 text-center font-semibold text-gray-900">Users</span>
+          <span className="mt-0 text-center font-normal text-black" style = {{fontFamily:'Product Sans'}}>Users</span>
           <p className="mt-1 text-xs text-center font-light tracking-wide">Add or manage users</p>
         </div>
 
@@ -74,7 +101,7 @@ function App() {
           <div className="bg-white p-2">
             <span className="text-2xl">👨‍👨‍👧‍👦</span> {/* Groups Icon */}
           </div>
-          <span className="mt-0 text-center font-semibold text-gray-900">Groups</span>
+          <span className="mt-0 text-center font-normal text-black" style = {{fontFamily:'Product Sans'}}>Groups</span>
           <p className="mt-1 text-xs text-center font-light tracking-wide">Create groups and mailing lists</p>
         </div>
 
@@ -84,7 +111,7 @@ function App() {
           <div className="bg-white p-2">
             <span className="text-2xl">⚙️</span> {/* Settings Icon */}
           </div>
-          <span className="mt-0 text-center font-semibold text-gray-900">Settings</span>
+          <span className="mt-0 text-center font-normal text-black" style = {{fontFamily:'Product Sans'}}>Settings</span>
           <p className="mt-1 text-xs text-center font-light tracking-wide">Update information about your company</p>
         </div>
 
@@ -94,7 +121,7 @@ function App() {
           <div className="bg-white p-2">
             <span className="text-2xl">📈</span> {/* Reports Icon */}
           </div>
-          <span className="mt-0 text-center font-semibold text-gray-900">Reports</span>
+          <span className="mt-0 text-center font-normal text-black" style = {{fontFamily:'Product Sans'}}>Reports</span>
           <p className="mt-1 text-xs text-center font-light tracking-wide">Monitor usage across your organization</p>
         </div>
 
