@@ -6,7 +6,6 @@ import App from './App';
 
 import Users from './components/Users';
 
-
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

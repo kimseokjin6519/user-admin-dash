@@ -1,4 +1,5 @@
 import React from 'react';
+import UsersTable from './UsersTable';
 
 function Users() {
 
@@ -34,13 +35,10 @@ function Users() {
                </div>
             </div>  
 
-            {/* Users List Component*/}            
-
-            <div className="flex w-full h-full bg-gray-200 rounded">
-               <div className="flex flex-col justify-center h-8 text-sm text-gray-400 ml-2" style ={{fontFamily:'Calibri'}}>Name</div>
-               
+            {/* Users Table Component*/}
+            <div className="">            
+               <UsersTable />
             </div>
-
          </div>
       </div>
 
