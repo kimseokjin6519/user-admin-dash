@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
+import { Link } from 'react-router-dom';
 
 function Home() {
    return (
@@ -22,18 +23,18 @@ function Home() {
                <div className="bg-white p-2">
                   <span className="text-2xl">📊</span> {/* Dashboard Icon */}
                </div>
-               <span className="mt-0 text-center font-normal text-black" style={{fontFamily:'Product Sans'}}>Dashboard</span>
-               <p className="mt-1 text-xs text-center font-light tracking-wide">See relevant insights about your organization</p>
+               <div className="mt-0 text-center font-normal text-black" style={{fontFamily:'Product Sans'}}>Dashboard</div>
+               <div className="mt-1 text-xs text-center font-light tracking-wide">See relevant insights about your organization</div>
             </div>
 
             {/* Users */}
-            <div className="flex flex-col items-center justify-start bg-white p-0 w-36">
+            <Link to="/users" className="flex flex-col items-center justify-start bg-white p-0 w-36">
                <div className="bg-white p-2">
                   <span className="text-2xl">👥</span> {/* Users Icon */}
                </div>
                <span className="mt-0 text-center font-normal text-black" style={{fontFamily:'Product Sans'}}>Users</span>
                <p className="mt-1 text-xs text-center font-light tracking-wide">Add or manage users</p>
-            </div>
+            </Link>
 
             {/* Groups */}
             <div className="flex flex-col items-center justify-start bg-white p-0 w-36">

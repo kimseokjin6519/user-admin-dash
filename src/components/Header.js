@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import defaultProfileImage from '../assets/images/default_profile.png';
 import defaultAppsImage from '../assets/images/grid.png';
 import defaultTasksImage from '../assets/images/hourglass.png';
@@ -11,7 +12,7 @@ function Header () {
             {/* Left-aligned Flexbox (Menu, Google Admin, and Search) */}
             <div className="flex items-center space-x-4">
                <button className="text-white text-lg" style={{ fontFamily: 'Google Sans' }}>☰</button>
-               <h1 className="text-lg font-light pr-4 text-gray-100" style={{ fontFamily: 'Google Sans' }}>Google Admin</h1>
+               <Link to="/" className="text-lg font-light pr-4 text-gray-100" style={{ fontFamily: 'Google Sans' }}>Google Admin</Link>
                
                <div className="flex items-center">
                   <input

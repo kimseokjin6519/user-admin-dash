@@ -23,8 +23,7 @@ function Users() {
             <div className="w-1/5 h-full bg-white rounded shadow-md p-4">
                <div className="text-sm font-normal text-gray-400" style ={{fontFamily:'Google Sans'}}>All organizations</div>
             </div>
-         
-         
+           
             {/* Users */}
             <div className="flex flex-col w-4/5 h-full bg-white rounded shadow-md p-4">
                
