@@ -9,13 +9,13 @@ function Home() {
          
          {/* Navigation Information */}
          <div className="bg-white p-2 pl-5 shadow-md">
-            <h2 className="text-sm font-normal text-gray-700 tracking-normal" style={{fontFamily:'Google Sans'}}>Admin Console</h2>
+            <div className="text-sm font-normal text-gray-700 tracking-normal" style={{fontFamily:'Google Sans'}}>Admin Console</div>
          </div>
 
          {/* Navigation Shadow */}     
-         <div className="w-full h-2 shadow-md"></div>         
+         <div className="flex w-full h-2"></div>         
 
-         {/* Content Section with Icons and Descriptions */}
+         {/* Content Start */}
          <div className="flex flex-wrap p-4 px-16 space-x-8 bg-white">
             
             {/* Dashboard */}

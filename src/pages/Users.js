@@ -1,5 +1,4 @@
 import React from 'react';
-
 import UsersTable from '../components/UsersTable';
 import Header from '../components/Header';
 
@@ -10,11 +9,11 @@ function Users() {
          
          {/* Navigation Information */}
          <div className="bg-white p-2 pl-5 shadow-lg">
-            <div className="text-sm font-normal text-gray-700 tracking-normal" style={{ fontFamily:'Google Sans' }}>Users</div>
+            <div className="text-sm font-normal text-gray-700 tracking-normal" style={{fontFamily:'Google Sans' }}>Users</div>
          </div>
 
          {/* Navigation Shadow */}
-         <div className="w-full h-2"></div>
+         <div className="flex w-full h-2"></div>
 
          {/* Content Start */}
          <div className="flex justify-between items-start bg-gray-100 min-h-screen py-6 px-12 space-x-8">
