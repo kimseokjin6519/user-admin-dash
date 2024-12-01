@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Navigate } from 'react-router-dom';
+
 import UsersTable from '../components/UsersTable';
 import Header from '../components/Header';
 
+
 function Users() {
+   const [isAuthenticated, setIsAuthenticated] = useState(true);
+   useEffect(() => {   
+      const token = localStorage.getItem('authToken');
+      if (token)
+         setIsAuthenticated(true);
+   }, []);
+   if (!isAuthenticated)
+      return <Navigate to="/login" />;
+
    return (
       <div>         
          <Header />

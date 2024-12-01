@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link, Navigate } from 'react-router-dom';
+
 import Header from '../components/Header';
-import { Link } from 'react-router-dom';
+
 
 function Home() {
+   const [isAuthenticated, setIsAuthenticated] = useState(true);
+   useEffect(() => {   
+      const token = localStorage.getItem('authToken');
+      if (token)
+         setIsAuthenticated(true);
+   }, []);
+   if (!isAuthenticated)
+      return <Navigate to="/login" />;
+
    return (
       <div>
          <Header />
