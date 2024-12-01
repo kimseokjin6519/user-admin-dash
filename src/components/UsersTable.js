@@ -16,7 +16,7 @@ function UsersTable() {
         </thead>
         <tbody>
           {Users.map((user, index) => (
-            <tr key={index} className="border-b h-10 w-full text-xs text-left" style={{fontFamily:'Google Sans'}}>
+            <tr key={index} className="border-b h-10 w-full text-xs text-left hover:bg-gray-100 cursor-pointer" style={{fontFamily:'Google Sans'}}>
               <td className="py-2 pl-2"><div className="flex"><div className="mr-4">☐</div><div className="mr-4">{user.name}</div></div></td>
               <td className="">{user.email}</td>
               <td className="">{user.status}</td>
