@@ -12,7 +12,7 @@ function Header () {
             {/* Left-aligned Flexbox (Menu, Google Admin, and Search) */}
             <div className="flex items-center space-x-4">
                <button className="text-white text-lg" style={{ fontFamily: 'Google Sans' }}>☰</button>
-               <Link to="/" className="text-lg font-light pr-4 text-gray-100" style={{ fontFamily: 'Google Sans' }}>Google Admin</Link>
+               <Link to="/home" className="text-lg font-light pr-4 text-gray-100" style={{ fontFamily: 'Google Sans' }}>Google Admin</Link>
                
                <div className="flex items-center">
                   <input
