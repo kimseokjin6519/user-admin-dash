@@ -4,16 +4,25 @@ import { Navigate } from 'react-router-dom';
 import UsersTable from '../components/UsersTable';
 import Header from '../components/Header';
 
-
 function Users() {
-   const [isAuthenticated, setIsAuthenticated] = useState(true);
+   
+   const [isAuthenticated, setIsAuthenticated] = useState(false);
+   
    useEffect(() => {   
-      const token = localStorage.getItem('authToken');
-      if (token)
+      const token = sessionStorage.getItem('authToken');
+      if (token === 'sessionTokenValue')
          setIsAuthenticated(true);
+      else setIsAuthenticated(false);
    }, []);
+
    if (!isAuthenticated)
-      return <Navigate to="/login" />;
+      return (
+         <div className="flex h-screen w-full flex-col items-center justify-center">
+            <div className="text-4xl">403</div>
+            <div className="text-xl">Forbidden</div>
+            <div className="text-base font-thin">You do not have permission to access to this resource</div>
+         </div>
+      );
 
    return (
       <div>         
