@@ -8,6 +8,13 @@ function Login() {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const [error, setError] = useState('');
+
+   useEffect(() => {   
+      const token = sessionStorage.getItem('authToken');
+      if (token === 'sessionTokenValue')
+         setIsAuthenticated(true);
+      else setIsAuthenticated(false);
+   }, []);
    
    const handleSubmit = (event) => {
       if (email === 'user@example.com' && password === 'mypassword123') {

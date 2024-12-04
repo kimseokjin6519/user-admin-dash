@@ -2,12 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 
 import Header from '../components/Header';
-
+import Sidebar from '../components/Sidebar';
 
 function Home() {
 
-   const [isAuthenticated, setIsAuthenticated] = useState(false);
+   const [isAuthenticated, setIsAuthenticated] = useState(null);
+
+   const [sidebarOpen, setSidebarOpen] = useState(false);
    
+   const [headerHeight, setHeaderHeight] = useState(0);
+
    useEffect(() => {   
       const token = sessionStorage.getItem('authToken');
       if (token === 'sessionTokenValue')
@@ -15,6 +19,14 @@ function Home() {
       else setIsAuthenticated(false);
    }, []);
    
+   if (isAuthenticated === null) {
+      return (
+        <div className="flex h-screen w-full flex-col items-center justify-center">
+          <div></div>
+        </div>
+      );
+    }
+    
    if (!isAuthenticated)
       return (
          <div className="flex h-screen w-full flex-col items-center justify-center">
@@ -25,8 +37,12 @@ function Home() {
       );
 
    return (
-      <div>
-         <Header />
+
+      <div className={sidebarOpen ? 'ml-[250px]' : 'ml-0'}>
+      
+         {sidebarOpen && <Sidebar headerHeight={headerHeight} />}
+
+         <Header setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} setHeaderHeight={setHeaderHeight} headerHeight={headerHeight} />
          
          {/* Navigation Information */}
          <div className="bg-white p-2 pl-5 shadow-md">

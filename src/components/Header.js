@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import defaultProfileImage from '../assets/images/default_profile.png';
 import defaultAppsImage from '../assets/images/grid.png';
 import defaultTasksImage from '../assets/images/hourglass.png';
 
-function Header () {
+function Header ({ setSidebarOpen , sidebarOpen, setHeaderHeight, headerHeight }) {
+   
+   const headerRef = useRef(null);
+
+   useEffect(() => {
+      if (headerRef.current) {
+         const height = headerRef.current.offsetHeight;
+         setHeaderHeight(height);
+      }
+   }, [setHeaderHeight]);
+
    return (
-      <div>      
+      <div ref={headerRef}>      
          <div className="bg-blue-700 text-white p-4 flex justify-between items-center">
             
             {/* Left-aligned Flexbox (Menu, Google Admin, and Search) */}
             <div className="flex items-center space-x-4">
-               <button className="text-white text-lg" style={{ fontFamily: 'Google Sans' }}>☰</button>
+               <button onClick={() => setSidebarOpen(!sidebarOpen)} className="text-white text-lg" style={{ fontFamily: 'Google Sans' }}>☰</button>
                <Link to="/home" className="text-lg font-light pr-4 text-gray-100" style={{ fontFamily: 'Google Sans' }}>Google Admin</Link>
                
                <div className="flex items-center">

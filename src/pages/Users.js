@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom';
-
 import UsersTable from '../components/UsersTable';
 import Header from '../components/Header';
+import dropDownIcon from '../assets/images/icons/dropdown.png';
+import downloadIcon from '../assets/images/icons/download.png';
 
 function Users() {
    
-   const [isAuthenticated, setIsAuthenticated] = useState(false);
+   const [isAuthenticated, setIsAuthenticated] = useState(null);
    
    useEffect(() => {   
       const token = sessionStorage.getItem('authToken');
@@ -14,6 +14,14 @@ function Users() {
          setIsAuthenticated(true);
       else setIsAuthenticated(false);
    }, []);
+
+   if (isAuthenticated === null) {
+      return (
+        <div className="flex h-screen w-full flex-col items-center justify-center">
+          <div></div>
+        </div>
+      );
+    }
 
    if (!isAuthenticated)
       return (
@@ -52,8 +60,15 @@ function Users() {
                   <div className="text-sm font-normal text-gray-800 mr-1" style ={{fontFamily:'Google Sans'}}>Users</div>
                   <div className="text-sm font-normal text-gray-800 mr-1" style ={{fontFamily:'Google Sans'}}>|</div>
                   <div className="text-sm font-normal text-gray-400" style ={{fontFamily:'Google Sans'}}>Showing users from all organizational units</div>
+                  
+                  <img className="h-4 w-4 ml-auto" alt="Drop Down" src={dropDownIcon} />
+                  <img className="h-4 w-4 ml-4" alt="Download" src={downloadIcon} />
+
+                  {/*
                   <div className="text-sm font-normal text-gray-400 ml-auto" style ={{fontFamily:'Google Sans'}}>Dropdown</div>
                   <div className="text-sm font-normal text-gray-400 ml-1" style ={{fontFamily:'Google Sans'}}>Download</div>
+                  */}
+                  
                </div>
 
                {/* Gray Line */}
