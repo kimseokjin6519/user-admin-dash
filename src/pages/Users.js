@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import UsersTable from '../components/UsersTable';
 import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
+
 import dropDownIcon from '../assets/images/icons/dropdown.png';
 import downloadIcon from '../assets/images/icons/download.png';
 
@@ -8,6 +10,10 @@ function Users() {
    
    const [isAuthenticated, setIsAuthenticated] = useState(null);
    
+   const [sidebarOpen, setSidebarOpen] = useState(false);
+   
+   const [headerHeight, setHeaderHeight] = useState(0);
+
    useEffect(() => {   
       const token = sessionStorage.getItem('authToken');
       if (token === 'sessionTokenValue')
@@ -33,8 +39,12 @@ function Users() {
       );
 
    return (
-      <div>         
-         <Header />
+
+      <div className={sidebarOpen ? 'ml-[250px]' : 'ml-0'}>
+      
+         {sidebarOpen && <Sidebar headerHeight={headerHeight} />}
+
+         <Header setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} setHeaderHeight={setHeaderHeight} headerHeight={headerHeight} />
          
          {/* Navigation Information */}
          <div className="bg-white p-2 pl-5 shadow-lg">

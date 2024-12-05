@@ -1,0 +1,16 @@
+
+@keyframes fadeInOutTriangle {
+   0% {
+      opacity: 0;
+   }
+   50% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+   }
+}
+
+.fadeInOutTriangle {
+   animation: fadeInOutTriangle 1s ease-out forwards;
+}

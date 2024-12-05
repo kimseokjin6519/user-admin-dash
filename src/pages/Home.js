@@ -4,6 +4,8 @@ import { Link, Navigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 
+
+
 function Home() {
 
    const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -38,6 +40,8 @@ function Home() {
 
    return (
 
+      <div className="">
+      
       <div className={sidebarOpen ? 'ml-[250px]' : 'ml-0'}>
       
          {sidebarOpen && <Sidebar headerHeight={headerHeight} />}
@@ -102,6 +106,8 @@ function Home() {
 
          </div>
       </div>
+      </div>
+      
    );
 }
 
