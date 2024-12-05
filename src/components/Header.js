@@ -11,6 +11,7 @@ function Header ({ setSidebarOpen , sidebarOpen, setHeaderHeight, headerHeight }
          const height = headerRef.current.offsetHeight;
          setHeaderHeight(height);
       }
+      window.scrollTo(0, 0);
    }, [setHeaderHeight]);
 
    return (
