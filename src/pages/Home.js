@@ -1,32 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 
 function Home() {
-
    const [isAuthenticated, setIsAuthenticated] = useState(null);
-
    const [sidebarOpen, setSidebarOpen] = useState(false);
-   
    const [headerHeight, setHeaderHeight] = useState(0);
-
    useEffect(() => {   
       const token = sessionStorage.getItem('authToken');
       if (token === 'sessionTokenValue')
          setIsAuthenticated(true);
       else setIsAuthenticated(false);
    }, []);
-   
-   if (isAuthenticated === null) {
+   if (isAuthenticated === null)
       return (
-        <div className="flex h-screen w-full flex-col items-center justify-center">
-          <div></div>
-        </div>
+        <div className="flex h-screen w-full flex-col items-center justify-center"></div>
       );
-    }
-    
    if (!isAuthenticated)
       return (
          <div className="flex h-screen w-full flex-col items-center justify-center">
@@ -38,26 +28,32 @@ function Home() {
 
    return (
 
-      <div className="">
-      
       <div className={sidebarOpen ? 'ml-[250px]' : 'ml-0'}>
-      
+         
+         {/* Sidebar */}
+         
          {sidebarOpen && <Sidebar headerHeight={headerHeight} setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />}
+
+         {/* Header */}
 
          <Header setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} setHeaderHeight={setHeaderHeight} headerHeight={headerHeight} />
          
          {/* Navigation Information */}
+         
          <div className="bg-white p-2 pl-5 shadow-md">
             <div className="text-sm font-normal text-gray-700 tracking-normal" style={{fontFamily:'Google Sans'}}>Admin Console</div>
          </div>
 
          {/* Navigation Shadow */}     
+         
          <div className="flex w-full h-2"></div>         
 
          {/* Content Start */}
+         
          <div className="flex flex-wrap p-4 px-16 space-x-8 bg-white">
             
             {/* Dashboard */}
+         
             <div className="flex flex-col items-center justify-start bg-white p-0 w-36">
                <div className="bg-white p-2">
                   <span className="text-2xl">📊</span> {/* Dashboard Icon */}
@@ -67,6 +63,7 @@ function Home() {
             </div>
 
             {/* Users */}
+         
             <Link to="/users" className="flex flex-col items-center justify-start bg-white p-0 w-36">
                <div className="bg-white p-2">
                   <span className="text-2xl">👥</span> {/* Users Icon */}
@@ -76,6 +73,7 @@ function Home() {
             </Link>
 
             {/* Groups */}
+         
             <div className="flex flex-col items-center justify-start bg-white p-0 w-36">
                <div className="bg-white p-2">
                   <span className="text-2xl">👨‍👨‍👧‍👦</span> {/* Groups Icon */}
@@ -85,6 +83,7 @@ function Home() {
             </div>
 
             {/* Settings */}
+         
             <div className="flex flex-col items-center justify-start bg-white p-0 w-36">
                <div className="bg-white p-2">
                   <span className="text-2xl">⚙️</span> {/* Settings Icon */}
@@ -94,6 +93,7 @@ function Home() {
             </div>
 
             {/* Reports */}
+         
             <div className="flex flex-col items-center justify-start bg-white p-0 w-36">
                <div className="bg-white p-2">
                   <span className="text-2xl">📈</span> {/* Reports Icon */}
@@ -104,8 +104,6 @@ function Home() {
 
          </div>
       </div>
-      </div>
-      
    );
 }
 
