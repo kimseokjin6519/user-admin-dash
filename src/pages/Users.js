@@ -42,7 +42,7 @@ function Users() {
 
       <div className={sidebarOpen ? 'ml-[250px]' : 'ml-0'}>
       
-         {sidebarOpen && <Sidebar headerHeight={headerHeight} />}
+         {sidebarOpen && <Sidebar headerHeight={headerHeight} setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen}/>}
 
          <Header setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} setHeaderHeight={setHeaderHeight} headerHeight={headerHeight} />
          
