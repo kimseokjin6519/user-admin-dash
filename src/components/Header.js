@@ -1,11 +1,14 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import defaultProfileImage from '../assets/images/default_profile.png';
 import defaultAppsImage from '../assets/images/grid.png';
 import defaultTasksImage from '../assets/images/hourglass.png';
+import ProfileList from './ProfileList';
 
 function Header ({ setSidebarOpen , sidebarOpen, setHeaderHeight, headerHeight }) {
    const headerRef = useRef(null);
+   const [profileListActive, setProfileListActive] = useState(false);
+
    useEffect(() => {
       if (headerRef.current) {
          const height = headerRef.current.offsetHeight;
@@ -54,9 +57,10 @@ function Header ({ setSidebarOpen , sidebarOpen, setHeaderHeight, headerHeight }
                
                {/* Default Profile Picture */}
             
-               <button className="text-white">
+               <button onClick={()=>setProfileListActive(!profileListActive)} className="text-white">
                   <img src={defaultProfileImage} alt="Profile" className="w-6 h-6 rounded-full"/>
                </button>
+               {profileListActive && <ProfileList />}
             
             </div>
          </div>
