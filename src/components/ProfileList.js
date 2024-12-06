@@ -22,21 +22,21 @@ function ProfileList() {
 
             <div className="flex mt-2">
                <img className="h-4 w-4"src={GearSVG} />
-               <div className="ml-2 mb-2 text-xs font-semibold text-gray-600 tracking-wide" style={{fontFamily:'Roboto'}}>Account Settings</div>
+               <div className="ml-2 mb-2 text-xs font-normal text-gray-400 tracking-wide" style={{fontFamily:'Roboto'}}>Account Settings</div>
             </div>
 
             {/* Edit Profile */}
 
             <div className="flex">
                <img className="h-4 w-4"src={EditProfileSVG} />
-               <div className="ml-2 mb-2 text-xs font-semibold text-gray-600 tracking-wide" style={{fontFamily:'Roboto'}}>Edit Profile</div>
+               <div className="ml-2 mb-2 text-xs font-normal text-gray-400 tracking-wide" style={{fontFamily:'Roboto'}}>Edit Profile</div>
             </div>
             
             {/* Help Profile */}
 
             <div className="flex">
                <img className="h-4 w-4"src={HelpSVG} />
-               <div className="ml-2 mb-2 text-xs font-semibold text-gray-600 tracking-wide" style={{fontFamily:'Roboto'}}>Help</div>
+               <div className="ml-2 mb-2 text-xs font-normal text-gray-400 tracking-wide" style={{fontFamily:'Roboto'}}>Help</div>
             </div>
             
 
@@ -44,7 +44,7 @@ function ProfileList() {
             
             <div className="flex">
                <img className="h-4 w-4"src={LogoutSVG} />
-               <div className="ml-2 mb-0 text-xs font-semibold text-gray-600 tracking-wide" style={{fontFamily:'Roboto'}}>Logout</div>
+               <div className="ml-2 mb-0 text-xs font-normal text-gray-400 tracking-wide" style={{fontFamily:'Roboto'}}>Log out</div>
             </div>
          </div>
       </div>
