@@ -1,5 +1,9 @@
 import React from 'react';
 import defaultProfileImage from '../assets/images/default_profile.png';
+import GearSVG from '../assets/images/icons/gear.svg';
+import EditProfileSVG from '../assets/images/icons/edit-profile.svg';
+import LogoutSVG from '../assets/images/icons/logout.svg';
+import HelpSVG from '../assets/images/icons/help.svg';
 
 function ProfileList() {
 
@@ -14,12 +18,34 @@ function ProfileList() {
                </div>
             </div>
 
-            {/* Line that spans the full width of the pop-up container */}
-            <div className="h-px w-56 bg-gray-400 mt-2 mb-2"></div>
+            {/* Account Settings */}
+
+            <div className="flex mt-2">
+               <img className="h-4 w-4"src={GearSVG} />
+               <div className="ml-2 mb-2 text-xs font-semibold text-gray-600 tracking-wide" style={{fontFamily:'Roboto'}}>Account Settings</div>
+            </div>
+
+            {/* Edit Profile */}
+
+            <div className="flex">
+               <img className="h-4 w-4"src={EditProfileSVG} />
+               <div className="ml-2 mb-2 text-xs font-semibold text-gray-600 tracking-wide" style={{fontFamily:'Roboto'}}>Edit Profile</div>
+            </div>
             
-            <div className="mb-2 text-xs font-semibold text-black tracking-wide" style={{fontFamily:'Roboto'}}>Account Settings</div>
-            <div className="mb-2 text-xs font-semibold text-black tracking-wide" style={{fontFamily:'Roboto'}}>Billing</div>
-            <div className="mb-2 text-xs font-semibold text-black tracking-wide" style={{fontFamily:'Roboto'}}>Logout</div>
+            {/* Help Profile */}
+
+            <div className="flex">
+               <img className="h-4 w-4"src={HelpSVG} />
+               <div className="ml-2 mb-2 text-xs font-semibold text-gray-600 tracking-wide" style={{fontFamily:'Roboto'}}>Help</div>
+            </div>
+            
+
+            <div className="w-56 border-t border-gray-400 mb-2"></div>
+            
+            <div className="flex">
+               <img className="h-4 w-4"src={LogoutSVG} />
+               <div className="ml-2 mb-0 text-xs font-semibold text-gray-600 tracking-wide" style={{fontFamily:'Roboto'}}>Logout</div>
+            </div>
          </div>
       </div>
    )
