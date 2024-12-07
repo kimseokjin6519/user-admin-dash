@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import defaultProfileImage from '../assets/images/default_profile.png';
 import GearSVG from '../assets/images/icons/gear.svg';
 import EditProfileSVG from '../assets/images/icons/edit-profile.svg';
 import LogoutSVG from '../assets/images/icons/logout.svg';
 import HelpSVG from '../assets/images/icons/help.svg';
 
-function ProfileList() {
+function ProfileList({ setProfileListActive }) {
+   const profileListRef = useRef(null);
+
+   /* Close Profile List Hook */
+
+   useEffect(() => {
+      const handleClickOutside = (event) => {
+         if (profileListRef.current && !profileListRef.current.contains(event.target))
+            setProfileListActive(false);
+      };   
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+         document.removeEventListener('mousedown', handleClickOutside);
+      };
+   }, [setProfileListActive]);
 
    return (
-      <div className="flex h-1/8 w-64 ml-4 py-4 absolute right-2 top-12 z-10 rounded-lg border bg-white shadow-lg">
+      <div ref={profileListRef} className="flex h-1/8 w-64 ml-4 py-4 absolute right-2 top-12 z-10 rounded-lg border bg-white shadow-lg">
          <div className="mx-4 flex flex-col text-black text-sm font-extralight tracking-wide" style={{fontFamily:'Product Sans'}}>
             <div className="mb-1 flex items-center">
                <img className="h-10 w-10 border border-gray-800 rounded" src={defaultProfileImage} />

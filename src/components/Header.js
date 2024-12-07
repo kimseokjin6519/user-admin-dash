@@ -9,6 +9,8 @@ function Header ({ setSidebarOpen , sidebarOpen, setHeaderHeight, headerHeight }
    const headerRef = useRef(null);
    const [profileListActive, setProfileListActive] = useState(false);
 
+   /* Calculate Header Height Hook */
+
    useEffect(() => {
       if (headerRef.current) {
          const height = headerRef.current.offsetHeight;
@@ -60,7 +62,7 @@ function Header ({ setSidebarOpen , sidebarOpen, setHeaderHeight, headerHeight }
                <button onClick={()=>setProfileListActive(!profileListActive)} className="text-white">
                   <img src={defaultProfileImage} alt="Profile" className="w-6 h-6 rounded-full"/>
                </button>
-               {profileListActive && <ProfileList />}
+               {profileListActive && <ProfileList setProfileListActive={setProfileListActive} />}
             
             </div>
          </div>

@@ -7,12 +7,18 @@ function Login() {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const [errorMessage, setErrorMessage] = useState('');
+
+   /* Authenticate Token Hook */
+
    useEffect(() => {   
       const token = sessionStorage.getItem('authToken');
       if (token === 'sessionTokenValue')
          setIsAuthenticated(true);
       else setIsAuthenticated(false);
    }, []);
+
+   /* Handle Form & Authenticate User Function */
+
    const handleSubmit = (event) => {
       if (email === 'user@example.com' && password === 'mypassword123') {
          sessionStorage.setItem('authToken', 'sessionTokenValue');
@@ -20,19 +26,16 @@ function Login() {
       } else setErrorMessage('Invalid credentials');
     };
 
+    /* Allow user to Home Page if authenticated */
+
     if (isAuthenticated)
       return <Navigate to="/home" />;
     
    return (
-
       <div>
-
          {/* Background */}
-         
          <div className="flex bg-white h-screen justify-center items-center">
-            
             {/* Login Box */}
-            
             <div className="flex flex-col w-1/4 h-1/2 justify-center bg-white shadow-md rounded-lg">
                <div className="flex items-end mb-2">
                   <img src={GoogleLogo} alt="Google Logo" className="flex items-center ml-4 mt-4 h-12 w-12"/>

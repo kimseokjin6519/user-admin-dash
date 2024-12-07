@@ -9,16 +9,21 @@ function Users() {
    const [isAuthenticated, setIsAuthenticated] = useState(null);
    const [sidebarOpen, setSidebarOpen] = useState(false);
    const [headerHeight, setHeaderHeight] = useState(0);
+
+   /* Authenticate Token Hook */
+
    useEffect(() => {
       const token = sessionStorage.getItem('authToken');
       if (token === 'sessionTokenValue')
          setIsAuthenticated(true);
       else setIsAuthenticated(false);
    }, []);
+   
    if (isAuthenticated === null)
       return (
         <div className="flex h-screen w-full flex-col items-center justify-center"></div>
       );
+   
    if (!isAuthenticated)
       return (
          <div className="flex h-screen w-full flex-col items-center justify-center">
