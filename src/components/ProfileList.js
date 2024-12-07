@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import defaultProfileImage from '../assets/images/default_profile.png';
 import GearSVG from '../assets/images/icons/gear.svg';
 import EditProfileSVG from '../assets/images/icons/edit-profile.svg';
@@ -7,6 +9,7 @@ import HelpSVG from '../assets/images/icons/help.svg';
 
 function ProfileList({ setProfileListActive }) {
    const profileListRef = useRef(null);
+   const navigate = useNavigate();
 
    /* Close Profile List Hook */
 
@@ -36,30 +39,33 @@ function ProfileList({ setProfileListActive }) {
 
             <div className="flex mt-2">
                <img className="h-4 w-4"src={GearSVG} />
-               <div className="ml-2 mb-2 text-xs font-normal text-gray-400 tracking-wide" style={{fontFamily:'Roboto'}}>Account Settings</div>
+               <div className="ml-2 mb-2 text-xs font-light text-gray-400 tracking-wide" style={{fontFamily:'Roboto'}}>Account Settings</div>
             </div>
 
             {/* Edit Profile */}
 
             <div className="flex">
                <img className="h-4 w-4"src={EditProfileSVG} />
-               <div className="ml-2 mb-2 text-xs font-normal text-gray-400 tracking-wide" style={{fontFamily:'Roboto'}}>Edit Profile</div>
+               <div className="ml-2 mb-2 text-xs font-light text-gray-400 tracking-wide" style={{fontFamily:'Roboto'}}>Edit Profile</div>
             </div>
             
             {/* Help Profile */}
 
             <div className="flex">
                <img className="h-4 w-4"src={HelpSVG} />
-               <div className="ml-2 mb-2 text-xs font-normal text-gray-400 tracking-wide" style={{fontFamily:'Roboto'}}>Help</div>
+               <div className="ml-2 mb-2 text-xs font-light text-gray-400 tracking-wide" style={{fontFamily:'Roboto'}}>Help</div>
             </div>
             
+            {/* Gray Line */}
 
             <div className="w-56 border-t border-gray-400 mb-2"></div>
             
-            <div className="flex">
+            {/* Logout */}
+
+            <button onClick = {() => {sessionStorage.removeItem('authToken'); navigate('/login')}} className="flex hover:bg-gray-200 cursor-pointer text-gray-400 hover:text-gray-800 hover:font-normal font-light">
                <img className="h-4 w-4"src={LogoutSVG} />
-               <div className="ml-2 mb-0 text-xs font-normal text-gray-400 tracking-wide" style={{fontFamily:'Roboto'}}>Log out</div>
-            </div>
+               <div className="ml-2 mb-0 text-xs tracking-wide cursor-pointer" style={{fontFamily:'Roboto'}}>Log out</div>
+            </button>
          </div>
       </div>
    )
