@@ -36,7 +36,7 @@ function Login() {
          {/* Background */}
          <div className="flex bg-white h-screen justify-center items-center">
             {/* Login Box */}
-            <div className="flex flex-col w-1/4 h-1/2 justify-center bg-white shadow-md rounded-lg">
+            <div className="flex flex-col border-[1px] border-gray-200 w-1/4 h-1/2 justify-center bg-white shadow-md rounded-lg">
                <div className="flex items-end mb-2">
                   <img src={GoogleLogo} alt="Google Logo" className="flex items-center ml-4 mt-4 h-12 w-12"/>
                   <div className="flex h-12 items-center mx-2 text-lg text-blue-800" style={{fontFamily:'Google Sans'}}>Google Admin</div>
