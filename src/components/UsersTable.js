@@ -1,17 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Users from './UsersList.js';
 
 function UsersTable() {
 
    const [contextMenuVisible, setContextMenuVisible] = useState(false);
    const [position, setPosition] = useState({ top: 0, left: 0 });
+   const contextMenuRef = useRef(null);
 
+   /* Right Click Function */
+   
    const handleContext = (event) => {
       event.preventDefault();
       const { clientX: x, clientY: y } = event;
       setPosition({ top: y, left: x });
       setContextMenuVisible(true);
    };
+
+   /* Close Context Menu Hook */
+
+   useEffect(() => {
+      const handleClickOutside = (event) => {
+         if (contextMenuRef.current && !contextMenuRef.current.contains(event.target))
+            setContextMenuVisible(false);
+      };   
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+         document.removeEventListener('mousedown', handleClickOutside);
+      };
+   }, [setContextMenuVisible]);
 
    return (
       <div className="">
@@ -38,37 +54,40 @@ function UsersTable() {
          </tbody>
          </table>
 
+         { /* Context Menu */ }
+         
          { contextMenuVisible && (
             
-            <div className="absolute flex flex-col w-64 justify-center border border-gray-200 bg-white rounded-lg cursor-pointer" style={{ top: position.top, left: position.left }}>   
+            <div ref={contextMenuRef} className="absolute flex flex-col w-64 justify-center border border-gray-400 shadow bg-white rounded-sm text-gray-400 cursor-pointer" style={{ top: position.top, left: position.left, fontFamily: 'Google Sans' }}>   
                
-               <div className="flex h-6 mt-2 items-center hover:bg-gray-200">
+               <div className="flex h-6 items-center hover:bg-gray-200 hover:text-gray-800 rounded-t-sm">
                   <div className="ml-4 text-sm">Add to Groups</div>
                </div>
                
-               <div className="flex h-6 mt-4 items-center hover:bg-gray-200">
+               <div className="flex h-6 items-center hover:bg-gray-200 hover:text-gray-800">
                   <div className="ml-4 text-sm">Email User</div>
                </div>
-               
-               <div className="w-64 h-4 items-center border-b border-gray-200"></div>
 
-               <div className="flex h-6 mt-4 items-center hover:bg-gray-200">
+               <div className="flex h-2 items-center">
+                  <div className="w-96 h-[1px] items-center border-b border-gray-200"></div>
+               </div>
+               
+               <div className="flex h-6 items-center hover:bg-gray-200 hover:text-gray-800">
                   <div className="ml-4 text-sm">Suspend User</div>
                </div>
 
-               <div className="flex h-6 mt-4 items-center hover:bg-gray-200">
+               <div className="flex h-6 items-center hover:bg-gray-200 hover:text-gray-800">
                   <div className="ml-4 text-sm">Restore Data</div>
                </div>
 
-               <div className="flex h-6 mt-4 items-center hover:bg-gray-200">
+               <div className="flex h-6 items-center hover:bg-gray-200 hover:text-gray-800">
                   <div className="ml-4 text-sm">Delete User</div>
                </div>
 
-               <div className="flex h-6 mt-4 items-center hover:bg-gray-200">
+               <div className="flex h-6 items-center hover:bg-gray-200 hover:text-gray-800 rounded-b-sm">
                   <div className="ml-4 text-sm">Change Organizational Unit</div>
                </div> 
 
-               <div className="mt-2"></div>
                
             </div>
          
