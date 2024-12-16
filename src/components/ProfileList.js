@@ -40,7 +40,7 @@ function ProfileList({ setProfileListActive }) {
             {/* Account Settings */}
             
             <div className="h-6 mt-2">
-               <div className="flex h-4 items-center hover:bg-gray-200 text-gray-600 hover:text-gray-800 font-light rounded-sm cursor-pointer">
+               <div className="flex h-4 items-center hover:bg-gray-200 text-gray-600 hover:text-gray-800 font-normal rounded-sm cursor-pointer">
                   <img className="h-4 w-4"src={GearSVG} />
                   <div className="ml-2 text-xs tracking-wider" style={{fontFamily:'Roboto'}}>Account Settings</div>
                </div>
@@ -48,7 +48,7 @@ function ProfileList({ setProfileListActive }) {
 
             {/* Edit Profile */}
             <div className="h-6">
-               <div className="flex h-4 items-center hover:bg-gray-200 text-gray-600 hover:text-gray-800 font-light rounded-sm cursor-pointer">
+               <div className="flex h-4 items-center hover:bg-gray-200 text-gray-600 hover:text-gray-800 font-normal rounded-sm cursor-pointer">
                   <img className="flex h-4 w-4"src={EditProfileSVG} />
                   <div className="ml-2 text-xs tracking-wider" style={{fontFamily:'Roboto'}}>Edit Profile</div>
                </div>
@@ -56,7 +56,7 @@ function ProfileList({ setProfileListActive }) {
             
             {/* Help Profile */}
             <div className="h-6">
-            <div className="flex h-4 items-center hover:bg-gray-200 text-gray-600 hover:text-gray-800 font-light rounded-sm cursor-pointer">
+            <div className="flex h-4 items-center hover:bg-gray-200 text-gray-600 hover:text-gray-800 font-normal rounded-sm cursor-pointer">
                <img className="h-4 w-4"src={HelpSVG} />
                <div className="ml-2 text-xs tracking-wider" style={{fontFamily:'Roboto'}}>Help</div>
             </div>
@@ -69,9 +69,9 @@ function ProfileList({ setProfileListActive }) {
 
             {/* Logout */}
             <div className="h-4 my-1">
-               <button onClick = {() => {sessionStorage.removeItem('authToken'); navigate('/login')}} className="flex w-56 h-4 items-center hover:bg-gray-200 cursor-pointer text-gray-600 hover:text-gray-800 font-light hover:font-normal rounded-sm">
+               <button onClick = {() => {sessionStorage.removeItem('authToken'); navigate('/login')}} className="flex w-56 h-4 items-center hover:bg-gray-200 cursor-pointer text-gray-600 hover:text-gray-800 font-normal hover:font-normal rounded-sm">
                      <img className="h-4 w-4"src={LogoutSVG} />
-                     <div className="ml-2 text-xs tracking-wide cursor-pointer" style={{fontFamily:'Roboto'}}>Log out</div>
+                     <div className="ml-2 text-xs tracking-wider" style={{fontFamily:'Roboto'}}>Log out</div>
                </button>
             </div>
          
