@@ -26,7 +26,8 @@ function ProfileList({ setProfileListActive }) {
 
    return (
       <div ref={profileListRef} className="flex h-1/8 w-64 ml-4 py-4 absolute right-2 top-12 z-10 rounded-lg border bg-white shadow-lg">
-         <div className="mx-4 flex flex-col text-black text-sm font-extralight tracking-wide" style={{fontFamily:'Product Sans'}}>
+         
+         <div className="mx-4 flex flex-col justify-center text-black text-sm font-extralight tracking-wide" style={{fontFamily:'Product Sans'}}>
             <div className="mb-1 flex items-center cursor-pointer">
                <img className="h-10 w-10 border border-gray-800 rounded" src={defaultProfileImage} />
                <div className="h-10 flex flex-col justify-center">
@@ -35,28 +36,29 @@ function ProfileList({ setProfileListActive }) {
                </div>
             </div>
 
+            
             {/* Account Settings */}
             
             <div className="h-6 mt-2">
-               <div className="flex h-4 items-center hover:bg-gray-200 text-gray-600 hover:text-gray-800 hover:font-normal font-light rounded-full cursor-pointer">
+               <div className="flex h-4 items-center hover:bg-gray-200 text-gray-600 hover:text-gray-800 font-light rounded-sm cursor-pointer">
                   <img className="h-4 w-4"src={GearSVG} />
-                  <div className="ml-2 text-xs tracking-wide" style={{fontFamily:'Roboto'}}>Account Settings</div>
+                  <div className="ml-2 text-xs tracking-wider" style={{fontFamily:'Roboto'}}>Account Settings</div>
                </div>
             </div>
 
             {/* Edit Profile */}
             <div className="h-6">
-               <div className="flex h-4 items-center hover:bg-gray-200 text-gray-600 hover:text-gray-800 hover:font-normal font-light rounded-full cursor-pointer">
+               <div className="flex h-4 items-center hover:bg-gray-200 text-gray-600 hover:text-gray-800 font-light rounded-sm cursor-pointer">
                   <img className="flex h-4 w-4"src={EditProfileSVG} />
-                  <div className="ml-2 text-xs tracking-wide" style={{fontFamily:'Roboto'}}>Edit Profile</div>
+                  <div className="ml-2 text-xs tracking-wider" style={{fontFamily:'Roboto'}}>Edit Profile</div>
                </div>
             </div>
             
             {/* Help Profile */}
-            <div className="h-4">
-            <div className="flex h-4 items-center hover:bg-gray-200 text-gray-600 hover:text-gray-800 hover:font-normal font-light rounded-full cursor-pointer">
+            <div className="h-6">
+            <div className="flex h-4 items-center hover:bg-gray-200 text-gray-600 hover:text-gray-800 font-light rounded-sm cursor-pointer">
                <img className="h-4 w-4"src={HelpSVG} />
-               <div className="ml-2 text-xs tracking-wide" style={{fontFamily:'Roboto'}}>Help</div>
+               <div className="ml-2 text-xs tracking-wider" style={{fontFamily:'Roboto'}}>Help</div>
             </div>
             </div>
             
@@ -67,12 +69,14 @@ function ProfileList({ setProfileListActive }) {
 
             {/* Logout */}
             <div className="h-4 my-1">
-            <button onClick = {() => {sessionStorage.removeItem('authToken'); navigate('/login')}} className="flex w-56 h-4 items-center hover:bg-gray-200 cursor-pointer text-gray-600 hover:text-gray-800 font-light hover:font-normal rounded-full">
-                  <img className="h-4 w-4"src={LogoutSVG} />
-                  <div className="ml-2 text-xs tracking-wide cursor-pointer" style={{fontFamily:'Roboto'}}>Log out</div>
-            </button>
+               <button onClick = {() => {sessionStorage.removeItem('authToken'); navigate('/login')}} className="flex w-56 h-4 items-center hover:bg-gray-200 cursor-pointer text-gray-600 hover:text-gray-800 font-light hover:font-normal rounded-sm">
+                     <img className="h-4 w-4"src={LogoutSVG} />
+                     <div className="ml-2 text-xs tracking-wide cursor-pointer" style={{fontFamily:'Roboto'}}>Log out</div>
+               </button>
             </div>
+         
          </div>
+
       </div>
    )
 }
